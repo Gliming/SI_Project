@@ -1,2 +1,2 @@
 # SI_Project
-A course project of Software Innovation and R&amp;D Management
+A practical project for a Software Innovation and R&amp;D Management course
