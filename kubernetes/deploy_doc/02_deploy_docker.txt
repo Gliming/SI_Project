@@ -1,0 +1,23 @@
+将应用部署在docker中，制作成image供kuberneters调用
+
+	1.创建springboot应用，比如data,并打包为jar文件
+	mvn package
+	mvn install
+
+	2. 创建Dockerfile镜像构建文件
+	构建Dockerfile文件，见data-erueka-docker
+
+	3. 执行构建语句
+	docker build -t springboot-helloworld:latest .
+		此时可以在使用docker images可以看到此镜像。
+
+	4. 但是此images是本地的images，各个node之间的调度会有些麻烦，因此选用dockerhub。
+	即将此images传到dockerhub中，再让每个node从dockerhub中拿镜像
+
+		将node打tag
+		docker tag springboot-helloworld 192.168.1.2:5000/springboot-helloworld:latest
+
+		push到dockerhub
+		docker push lilingcheng/springboot-data:latest
+
+		此时在dockerhub中有这样的镜像，可供kubernetes调用。

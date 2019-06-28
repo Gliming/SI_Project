@@ -1,0 +1,19 @@
+本文档将云端的images使用kubernetes进行部署
+	1. 将node染色（read-write）
+	是pod可以部署在node cluster中
+	2. 使用ReplicationController来部署多组pod
+	可以实现CICD的要求
+		RC的yaml见文件
+		kubectl create -f springboot-data-rc.yaml
+
+	3. 查看RC
+		kubectl get rc
+	4. 查看Pod
+		kubectl get pods
+
+	5. 使用svc进行调度分配
+		kubectl create -f springboot-data-svc.yaml
+
+	6. 查看SVC
+
+		kubectl get svc

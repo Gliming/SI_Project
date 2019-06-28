@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: springboot-data-contoller
+spec:
+  replicas: 3
+  selector:
+    app: springboot-data
+  template:
+    metadata:
+     labels:
+       app: springboot-data
+    spec:
+     containers:
+     - name: springboot-data
+       image: lilingcheng/springboot-data
+       ports:
+       - containerPort: 30727
+     nodeSelector:
+       zone:  read-write
+
+
