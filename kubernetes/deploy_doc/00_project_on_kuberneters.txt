@@ -1,0 +1,9 @@
+本文档记录将应用部署在kuberneters上的总体思路
+	1. 在kuberneters上搭建cluster：
+	（在01中阐述）
+	
+	2. 将application封装成docker的image
+	（在02中阐述）
+
+	3. 将docker转化为kuberneters中pod，并使用kuberneters进行调度
+	（在03中阐述）

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-data-service
+spec:
+  #type: NodePort
+  ports:
+  - port: 30001
+    targetPort: 30723
+    #nodePort: 30001
+    #protocol: TCP
+  selector:
+    app: springboot-data
